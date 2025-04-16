@@ -1,0 +1,425 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+    <main id="content" class="wrapper layout-page">
+      <section>
+        <div class="slick-slider hero hero-header-09"
+          data-slick-options="{&#34;arrows&#34;:false,&#34;autoplay&#34;:true,&#34;cssEase&#34;:&#34;ease-in-out&#34;,&#34;dots&#34;:false,&#34;fade&#34;:true,&#34;infinite&#34;:true,&#34;slidesToShow&#34;:1,&#34;speed&#34;:600}">
+    
+    
+        {% for i in sliders %}
+        <div class="vh-100 d-flex align-items-center">
+          <div class="lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100 light-mode-img" data-bg-src={{i.image.url}}></div>
+  
+          <div class="position-relative z-index-2 container container-xxl pt-22 pb-15 pt-xl-13 pb-xl-11 px-20">
+            <div class="border-0 ps-lg-1 mx-md-0 mx-auto hero-card text-center">
+              <div class="text-start text-xl-start">
+                <div data-animate="fadeInDown">
+                  {% comment %} <p class="text-primary mb-8 hero-title font-primary">
+                    Made for you!
+                  </p> {% endcomment %}
+                  <h1 class="mb-7 hero-title">
+                    {{i.title}}
+                  </h1>
+                  <p class="hero-desc fs-18px mb-11 text-body-calculate">
+                    {{i.description}}
+                  </p>
+                </div>
+                <a href="#" data-animate="fadeInUp"
+                  class="btn btn-lg btn-dark btn-hover-bg-primary btn-hover-border-primary">
+                  Shop Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    
+
+        </div>
+      </section>
+
+      <section
+        id="because_you_need_time_for_yourself_1"
+        class="container mt-4 mt-lg-12 py-4 mb-15 mb-lg-18"
+      >
+        <div class="mb-13 text-center pb-3" data-animate="fadeInUp">
+          <img
+            data-src="{% static 'web/images/shop/image-box-01.png' %}"
+            width="150"
+            height="158"
+            class="mb-4 img-fluid lazy-image d-inline-block"
+            alt="..."
+            src="#"
+          />
+          <h2 class="h3 mb-0 mx-auto" style="max-width: 610px">
+            Because You Need Time for Yourself. Blend Beauty in You
+          </h2>
+        </div>
+        <div class="row gy-50px">
+          {% for i in products %}\
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div
+              class="card card-product grid-1 bg-transparent border-0"
+              data-animate="fadeInUp"
+            >
+              <figure
+                class="card-img-top position-relative mb-7 overflow-hidden"
+              >
+                <a
+                  href="shop/product-details-v1.html"
+                  class="hover-zoom-in d-block"
+                  title="Enriched Hand Wash"
+                >
+                  <img
+                    src="{{ i.get_absolute_url }}"
+
+                    data-src="{{i.image.url}}"
+                    class="img-fluid lazy-image w-100"
+                    alt="Enriched Hand Wash"
+                    width="330"
+                    height="440"
+                  />
+                </a>
+
+                <div class="position-absolute product-flash z-index-2">
+                  {% if i.is_offer %}
+                  <span class="badge badge-product-flash on-sale bg-primary">
+                      -{{ i.get_offer_percent|floatformat:0 }}%
+                  </span>
+                  {% endif %}
+                </div>
+                <div
+                  class="position-absolute d-flex z-index-2 product-actions horizontal"
+                >
+                  <a
+                    class="text-body-emphasis bg-body bg-dark-hover text-light-hover rounded-circle square product-action shadow-sm add_to_cart"
+                    href="#"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Add To Cart"
+                  >
+                    <svg class="icon icon-shopping-bag-open-light">
+                      <use xlink:href="#icon-shopping-bag-open-light"></use>
+                    </svg> </a
+                  ><a
+                    class="text-body-emphasis bg-body bg-dark-hover text-light-hover rounded-circle square product-action shadow-sm quick-view"
+                    href="#"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Quick View"
+                  >
+                    <span
+                      data-bs-toggle="modal"
+                      data-bs-target="#quickViewModal"
+                      class="d-flex align-items-center justify-content-center"
+                    >
+                      <svg class="icon icon-eye-light">
+                        <use xlink:href="#icon-eye-light"></use>
+                      </svg>
+                    </span>
+                  </a>
+                  <a
+                    class="text-body-emphasis bg-body bg-dark-hover text-light-hover rounded-circle square product-action shadow-sm wishlist"
+                    href="#"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Add To Wishlist"
+                  >
+                    <svg class="icon icon-star-light">
+                      <use xlink:href="#icon-star-light"></use>
+                    </svg>
+                  </a>
+                  <a
+                    class="text-body-emphasis bg-body bg-dark-hover text-light-hover rounded-circle square product-action shadow-sm compare"
+                    href="shop/compare.html"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    data-bs-title="Compare"
+                  >
+                    <svg class="icon icon-arrows-left-right-light">
+                      <use xlink:href="#icon-arrows-left-right-light"></use>
+                    </svg>
+                  </a>
+                </div>
+              </figure>
+              <div class="card-body text-center p-0">
+                <span
+                  class="d-flex align-items-center price text-body-emphasis fw-bold justify-content-center mb-3 fs-6">
+                {% if i.get_regular_price and i.get_sale_price and i.get_regular_price != i.get_sale_price %}
+                <del class="text-body fw-500 me-4 fs-13px">${{ i.get_regular_price }}</del>
+                <ins class="text-decoration-none">${{ i.get_sale_price }}</ins>
+                {% else %}
+                <ins class="text-decoration-none">${{ i.get_sale_price }}</ins>
+                {% endif %}
+                </span>
+
+                <h4
+                  class="product-title card-title text-primary-hover text-body-emphasis fs-15px fw-500 mb-3"
+                >
+                  <a
+                    class="text-decoration-none text-reset"
+                    href="{{ i.get_absolute_url }}"                     
+                    >{{i.name}}</a
+                  >
+                </h4>
+                <div
+                  class="d-flex align-items-center fs-12px justify-content-center"
+                >
+                  <div class="rating">
+                    <div class="empty-stars">
+                      <span class="star">
+                        <svg class="icon star-o">
+                          <use xlink:href="#star-o"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star-o">
+                          <use xlink:href="#star-o"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star-o">
+                          <use xlink:href="#star-o"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star-o">
+                          <use xlink:href="#star-o"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star-o">
+                          <use xlink:href="#star-o"></use>
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="filled-stars" style="width: 80%">
+                      <span class="star">
+                        <svg class="icon star text-primary">
+                          <use xlink:href="#star"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star text-primary">
+                          <use xlink:href="#star"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star text-primary">
+                          <use xlink:href="#star"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star text-primary">
+                          <use xlink:href="#star"></use>
+                        </svg>
+                      </span>
+                      <span class="star">
+                        <svg class="icon star text-primary">
+                          <use xlink:href="#star"></use>
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                  <span class="reviews ms-4 pt-3 fs-14px">2947 reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="text-center mt-12" data-animate="fadeInUp">
+          <a href="#" class="btn btn-outline-dark"> Shop All Product </a>
+        </div>
+      </section>
+
+      <section data-animate="fadeInUp">
+        <div class="container">
+          <div
+            class="card border-0 rounded-0 banner-06 hover-zoom-in hover-shine"
+          >
+            <img
+              class="lazy-image w-100 card-img object-fit-cover light-mode-img"
+              src="#"
+              data-src="{% static 'web/images/background/bg-other-01.jpg' %}"
+              width="1170"
+              height="424"
+              alt="Get The Skin You Want To Feel"
+            />
+            {% comment %} <img
+              class="lazy-image dark-mode-img w-100 card-img object-fit-cover"
+              src="#"
+              data-src="{% static 'web/images/background/bg-other-white-01.jpg' %}"
+              width="1170"
+              height="424"
+              alt="Get The Skin You Want To Feel"
+            /> {% endcomment %}
+            <div class="card-img-overlay">
+              <div
+                class="position-absolute top-50 end-0 translate-middle-y px-md-0 px-12"
+              >
+                <h5
+                  class="card-subtitle ls-1 mb-4 fw-semibold fs-15px text-body-emphasis"
+                >
+                  XYRA ESSENTIALS
+                </h5>
+                <h3 class="card-title card-title lh-45px fs-3 w-md-60">
+                  Nourishing Care For Skin & Hair
+                </h3>
+                <div class="mt-7">
+                  <a href="#" class="btn btn-white">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="container pt-15 pt-lg-17">
+        <div class="mb-12 text-center" data-animate="fadeInUp">
+          <h2 class="fs-3 mb-6">Featured Collection</h2>
+          <p class="fs-18px mb-0">Our products are designed for everyone.</p>
+        </div>
+      
+        <div class="row gy-30px">
+          <!-- Card 1 -->
+          <div class="col-md-4 col-12" data-animate="fadeInUp">
+            <div class="card border-0 rounded-0 hover-zoom-in hover-shine">
+              <img
+                class="lazy-image card-img object-fit-cover lazy-image light-mode-img"
+                src="#"
+                data-src="{% static 'web\\images\\banner\\banner-25.jpg' %}"
+                width="370"
+                height="490"
+                alt=""
+              />
+              <img
+                class="lazy-image dark-mode-img card-img object-fit-cover lazy-image"
+                src="#"
+                data-src="{% static 'web\\images\\banner\\banner-25.jpg' %}"
+                width="370"
+                height="490"
+                alt=""
+              />
+              <div
+                class="card-img-overlay d-inline-flex flex-column p-9 justify-content-end text-center"
+              >
+                <div><a href="#" class="btn btn-white">Herbal Repair Shampoo</a></div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Card 2 -->
+          <div class="col-md-4 col-12" data-animate="fadeInUp">
+            <div class="card border-0 rounded-0 hover-zoom-in hover-shine">
+              <img
+                class="lazy-image card-img object-fit-cover lazy-image light-mode-img"
+                src="#"
+                data-src="{% static 'web/images/banner/banner-23.jpg' %}"
+                width="370"
+                height="490"
+                alt=""
+              />
+              <img
+                class="lazy-image dark-mode-img card-img object-fit-cover lazy-image"
+                src="#"
+                data-src="{% static 'web/images/banner/banner-23.jpg' %}"
+                width="370"
+                height="490"
+                alt=""
+              />
+              <div
+                class="card-img-overlay d-inline-flex flex-column p-9 justify-content-end text-center"
+              >
+                <div><a href="#" class="btn btn-white">Soothing Body Wash</a></div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Card 3 -->
+          <div class="col-md-4 col-12" data-animate="fadeInUp">
+            <div class="card border-0 rounded-0 hover-zoom-in hover-shine">
+              <img
+                class="lazy-image card-img object-fit-cover lazy-image light-mode-img"
+                src="#"
+                data-src="{% static 'web/images/banner/banner-24.jpg' %}"
+                width="370"
+                height="490"
+                alt=""
+              />
+              <img
+                class="lazy-image dark-mode-img card-img object-fit-cover lazy-image"
+                src="#"
+                data-src="{% static 'web/images/banner/banner-24.jpg' %}"
+                width="370"
+                height="490"
+                alt=""
+              />
+              <div
+                class="card-img-overlay d-inline-flex flex-column p-9 justify-content-end text-center"
+              >
+                <div><a href="#" class="btn btn-white">Gentle Skin Soap Bar</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="pt-lg-17 pb-lg-18 pt-15 pb-16">
+        <div class="container text-center mt-lg-3">
+          <div class="row">
+            <div
+              class="col-lg-6 border-0 border-lg-end"
+              data-animate="fadeInUp"
+            >
+              <h3 class="mx-auto fs-4 mb-6">Follow Us on</h3>
+              <p class="mx-auto mb-10 newletter-follow-desc">
+                Shapes and proportions are for your intellect. I’ve treated the
+                waistcoat as if it were a corset.
+              </p>
+              <div class="socical-icon social-icon-style-1">
+                <ul class="list-inline fs-5 mb-0">
+                  <li class="list-inline-item me-7 me-lg-12">
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                  </li>
+                  <li class="list-inline-item me-7 me-lg-12">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li class="list-inline-item me-7 me-lg-12">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-11 mt-lg-0" data-animate="fadeInUp">
+              <h3 class="mx-auto fs-4 mb-6">Let’s Stay in Touch</h3>
+              <p class="mx-auto mb-10">
+                We’ll shout you $10 off your first order.
+              </p>
+              <form class="mx-auto newletter-follow-form">
+                <div class="input-group position-relative">
+                  <input
+                    type="email"
+                    class="form-control bg-body rounded-left"
+                    placeholder="Enter your email address"
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-dark btn-hover-bg-primary btn-hover-border-primary ms-0"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    {% endblock  %}

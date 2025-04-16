@@ -1,0 +1,388 @@
+{% extends "web/base.html" %}
+{% load static %} 
+
+{% block content %}
+<main id="content" class="wrapper layout-page">
+  <section class="position-relative" id="about_introduction">
+    <div
+      class="lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100 light-mode-img"
+      data-bg-src="{% static 'web/images/background/bg-about-01.jpg' %}"
+    ></div>
+
+    <div class="position-relative z-index-2 container py-18 py-lg-25">
+      <p class="fw-semibold ls-15 text-uppercase text-body-emphasis mb-lg-7 mt-lg-16">
+        Introducing
+      </p>
+      <h2 class="fs-56px mb-7">About Xyra</h2>
+    </div>
+  </section>
+
+  <section>
+    <div class="container pt-lg-17 pb-lg-20 pb-15 pt-11 mb-lg-4">
+      <div class="text-center pb-lg-17 pb-13 mb-3">
+        <img
+          data-src="{% static 'web/images/shop/image-box-01.png' %}"
+          alt="xyra-logo"
+          class="img-fluid lazy-image m-auto"
+          width="150"
+          height="158"
+          src="#"
+        />
+        <h3 class="mw-xl-50 mw-lg-60 mx-lg-auto mb-8">
+          Empowering your confidence through quality self-care
+        </h3>
+        <p class="mw-xl-60 mw-lg-75 mx-lg-auto mb-0">
+          At Xyra, we believe that true beauty begins with self-love. Our mission is to create everyday essentials that not only care for your skin and hair but also uplift your daily routine. Crafted with care, our products blend gentle ingredients and effective formulations to help you feel refreshed, confident, and naturally radiant.
+        </p>
+      </div>
+
+      <div class="row mb-lg-18 mb-15 pb-3 align-items-center">
+        <div class="col-lg-6 pe-lg-0">
+          <div class="card border-0 hover-zoom-in rounded-0">
+            <div class="image-box-4">
+              <img
+                class="lazy-image img-fluid lazy-image w-100"
+                src="#"
+                data-src="{% static 'web/images/banner/banner-11.jpg' %}"
+                width="960"
+                height="640"
+                alt=""
+              />
+            </div>
+            <div class="d-none"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 px-lg-12 ps-xl-18 pe-xl-20 mt-12 mt-lg-0">
+          <h3 class="mb-8">Glow with Xyra, naturally</h3>
+          <p class="mb-0">
+            Xyra is more than just a personal care brand – it's a lifestyle choice for those who seek simplicity and authenticity. We offer high-quality soaps, refreshing body washes, nourishing shampoos and conditioners, and hair oils that support your self-care rituals. Each product is carefully formulated to provide a feel-good experience while staying gentle on your body.
+          </p>
+        </div>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-6 ps-lg-0 order-lg-1">
+          <div class="card border-0 hover-zoom-in rounded-0">
+            <div class="image-box-4">
+              <img
+                class="lazy-image img-fluid lazy-image w-100"
+                src="#"
+                data-src="{% static 'web/images/banner/banner-12.jpg' %}"
+                width="960"
+                height="640"
+                alt=""
+              />
+            </div>
+            <div class="d-none"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-12 mt-lg-0 ps-xl-15 pe-xl-20 px-lg-12">
+          <h3 class="mb-8">Our Mission</h3>
+          <p class="mb-0">
+            Our mission at Xyra is simple: to make personal care effective, affordable, and honest. We are committed to providing clean, cruelty-free products made with ingredients you can trust. With a focus on everyday essentials, we aim to deliver reliable self-care options that help you feel good – inside and out.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+        <div
+          class="slick-slider thumb"
+          data-slick-options='{"slidesToShow": 6,"focusOnSelect": true,"arrows": false, "dots": false, "asNavFor": "#with_client_logo_4 .main", "responsive":[{"breakpoint":992,"settings":{"dots":true,"slidesToShow":4}},{"breakpoint":768,"settings":{"dots":true,"slidesToShow":3}},{"breakpoint":576,"settings":{"dots":true,"slidesToShow":2}}] }'
+        >
+          <div class="client-logo-item">
+            <img
+              class="lazy-image w-auto mx-auto opacity-30 light-mode-img"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-01.jpg' %}"
+              width="150"
+              height="82"
+              alt="goodness"
+            />
+            <img
+              class="lazy-image dark-mode-img w-auto mx-auto opacity-30"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-02.jpg' %}"
+              width="150"
+              height="82"
+              alt="goodness"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              class="lazy-image w-auto mx-auto opacity-30 light-mode-img"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-03.jpg' %}"
+              width="150"
+              height="82"
+              alt="grandgolden"
+            />
+            <img
+              class="lazy-image dark-mode-img w-auto mx-auto opacity-30"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-04.jpg' %}"
+              width="150"
+              height="82"
+              alt="grandgolden"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              class="lazy-image w-auto mx-auto opacity-30 light-mode-img"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-05.jpg' %}"
+              width="150"
+              height="82"
+              alt="parker"
+            />
+            <img
+              class="lazy-image dark-mode-img w-auto mx-auto opacity-30"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-06.jpg' %}"
+              width="150"
+              height="82"
+              alt="parker"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              class="lazy-image w-auto mx-auto opacity-30 light-mode-img"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-01.jpg' %}"
+              width="150"
+              height="82"
+              alt="thebeast"
+            />
+            <img
+              class="lazy-image dark-mode-img w-auto mx-auto opacity-30"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-02.jpg' %}"
+              width="150"
+              height="82"
+              alt="thebeast"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              class="lazy-image w-auto mx-auto opacity-30 light-mode-img"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-03.jpg' %}"
+              width="150"
+              height="82"
+              alt="hayden"
+            />
+            <img
+              class="lazy-image dark-mode-img w-auto mx-auto opacity-30"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-04.jpg' %}"
+              width="150"
+              height="82"
+              alt="hayden"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              class="lazy-image w-auto mx-auto opacity-30 light-mode-img"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-05.jpg' %}"
+              width="150"
+              height="82"
+              alt="goodmood"
+            />
+            <img
+              class="lazy-image dark-mode-img w-auto mx-auto opacity-30"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-06.jpg' %}"
+              width="150"
+              height="82"
+              alt="goodmood"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              class="lazy-image w-auto mx-auto opacity-30 light-mode-img"
+              src="#"
+              data-src="{% static 'web/images/client-logo/client-logo-01.png' %}"
+              width="150"
+              height="82"
+              alt="goodness"
+            />
+            <img
+              class="lazy-image dark-mode-img w-auto mx-auto opacity-30"
+              src="#"
+              data-src="{% static 'web\images\instagram\instagram-04.jpg' %}"
+              width="150"
+              height="82"
+              alt="goodness"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-lg-18 pb-lg-16 pt-15 pb-md-13 pb-16">
+      <div class="container">
+        <div class="text-center mx-auto w-xl-40 w-lg-50 mb-12 mb-lg-15">
+          <h3 class="fs-3">
+            We pride ourselves on have a team of highly skilled
+          </h3>
+        </div>
+        <div
+          class="slick-slider mx-xl-n11"
+          data-slick-options='{"slidesToShow": 3,"dots":false,"arrows":false,"responsive":[{"breakpoint": 768,"settings": {"slidesToShow": 2,"arrows":false,"dots":true}},{"breakpoint": 576,"settings": {"slidesToShow": 1,"arrows":false,"dots":true}}]}'
+        >
+          <div class="px-xl-11">
+            <div class="card border-0 hover-change-image">
+              <div class="position-relative overflow-hidden">
+                <img
+                  class="card-img img-fluid lazy-image"
+                  src="#"
+                  data-src="{% static 'web/images/others/our-team-01.jpg' %}"
+                  width="377"
+                  height="446"
+                  alt="Slava Fedutik"
+                />
+                <div
+                  class="card-img-overlay border-0 d-flex flex-column p-0 justify-content-end align-items-center"
+                >
+                  <ul
+                    class="list-inline text-center bg-body-tertiary w-100 hover-image hover-bottom-to-top m-0 px-7 py-5"
+                  >
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-facebook"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-youtube"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-body px-0 py-7 text-start">
+                <h4 class="">
+                  <a href="#" class="text-decoration-none">Slava Fedutik</a>
+                </h4>
+                <p class="card-text">- Founder, Chief Creative</p>
+              </div>
+            </div>
+          </div>
+          <div class="px-xl-11">
+            <div class="card border-0 hover-change-image">
+              <div class="position-relative overflow-hidden">
+                <img
+                  class="card-img img-fluid lazy-image"
+                  src="#"
+                  data-src="{% static 'web/images/others/our-team-02.jpg' %}"
+                  width="377"
+                  height="446"
+                  alt="Jennifer C."
+                />
+                <div
+                  class="card-img-overlay border-0 d-flex flex-column p-0 justify-content-end align-items-center"
+                >
+                  <ul
+                    class="list-inline text-center bg-body-tertiary w-100 hover-image hover-bottom-to-top m-0 px-7 py-5"
+                  >
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-facebook"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-youtube"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-body px-0 py-7 text-start">
+                <h4 class="">
+                  <a href="#" class="text-decoration-none">Jennifer C.</a>
+                </h4>
+                <p class="card-text">- Founder, CEO</p>
+              </div>
+            </div>
+          </div>
+          <div class="px-xl-11">
+            <div class="card border-0 hover-change-image">
+              <div class="position-relative overflow-hidden">
+                <img
+                  class="card-img img-fluid lazy-image"
+                  src="#"
+                  data-src="{% static 'web/images/others/our-team-03.jpg' %}"
+                  width="377"
+                  height="446"
+                  alt="Valeriia Nadopta"
+                />
+                <div
+                  class="card-img-overlay border-0 d-flex flex-column p-0 justify-content-end align-items-center"
+                >
+                  <ul
+                    class="list-inline text-center bg-body-tertiary w-100 hover-image hover-bottom-to-top m-0 px-7 py-5"
+                  >
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-facebook"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item mx-6">
+                      <a href="#" class="fs-18px" tabindex="0"
+                        ><i class="fab fa-youtube"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-body px-0 py-7 text-start">
+                <h4 class="">
+                  <a href="#" class="text-decoration-none"
+                    >Valeriia Nadopta</a
+                  >
+                </h4>
+                <p class="card-text">- Founder, C0O</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}
